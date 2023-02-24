@@ -5087,7 +5087,7 @@ const header = {
   template: `Header`
 };
 const home = {
-  template: `<h1>Home...</h1>`
+  template: `<h1>Home</h1>`
 };
 document.querySelector("main").innerHTML = home.template;
 document.querySelector("header").innerHTML = header.template;
