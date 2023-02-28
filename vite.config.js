@@ -3,6 +3,7 @@ import path from 'path'
 export default {
   //aqui le dicimos donde tiene que buscar index.html
   root: path.resolve(__dirname, 'src'), // Carpeta donde alojamos el archivo main.js
+  base: './',
   resolve: {
     alias: {
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
