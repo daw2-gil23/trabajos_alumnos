@@ -14,11 +14,9 @@ Utilizaremos la metedeologia basado en agile y scrom
 2. Dividiremos las historias en tareas 
 3. Agruparemos las historias en sprins 
 ### Recuersos
-(https://lenguajejs.com/javascript/)
+[Tutorial JS](https://lenguajejs.com/javascript/)
 
-/npm install boostrap/
-
-'''
+~~~
 import path from 'path'
 
 export default {
@@ -53,4 +51,4 @@ export default {
     hot: true
   }
 }
-'''
+~~~
