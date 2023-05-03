@@ -1,4 +1,4 @@
 
-export const footer ={
-    template: `footer`
+export const footer = {
+  template: ''
 }
