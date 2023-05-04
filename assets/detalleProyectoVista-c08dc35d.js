@@ -1,5 +1,5 @@
-import { s as supabase } from "./main-c4f8c06a.js";
-import { P as Proyecto } from "./proyecto-5e8aafd6.js";
+import { s as supabase, P as Perfil } from "./main-c121af88.js";
+import { P as Proyecto } from "./proyecto-52467481.js";
 class Comentario {
   // Mapping de propiedades de la tabla perfiles
   constructor(id = null, created_at = null, comentario = null, proyecto_id = null, user_id = null) {
@@ -114,7 +114,7 @@ const detalleProyectoVista = {
       <h3>Comentarios:</h3>
       
       <form id="formComentario">
-        <div class="comentario d-flex flex-wrap align-item-top bg-dark p-3 mb-5">
+        <div class="comentario d-flex flex-wrap align-item-top bg-dark p-3">
           
             <div class="w-100 d-flex">
               <img id="imgPerfilLogueado" src="/assets/avatar.svg" alt="us" class="border me-3 mt-1" style="width:50px;height:50px;">
@@ -147,16 +147,21 @@ const detalleProyectoVista = {
     autor.innerHTML = nombreAutor[0].nombre_usuario;
     const boton = document.querySelector("#btnEnviarComentario");
     const comentarios = await Comentario.getAllByProjectId(proyecto.id);
-    let divComentarios = "";
+    let divComentarios = '<div id="divComentario" class="comentario d-flex flex-wrap align-item-top bg-dark">';
     for (const comentario of comentarios) {
+      const autor2 = await Perfil.getById(comentario.id);
+      console.log(comentario);
       divComentarios += `
-      <div class="w-100 d-flex mb-2 p-3">
+      <div class="w-100 d-flex mb-2 p-3 bg-dark">
         <div class="w-100">          
-          <div class="comentario"><h3>${comentario.comentario}</h3></div>
+          <div class="comentario text-white"><h3>${comentario.comentario}</h3></div>
+
+          <p class="text-end small text-white "><h5>${autor2.nombre}</h5></p>
         </div>
       </div>
         `;
     }
+    divComentarios += "</div>";
     const opiniones = document.querySelector("#comentarios");
     opiniones.innerHTML = divComentarios;
     boton.addEventListener("click", async function(e) {

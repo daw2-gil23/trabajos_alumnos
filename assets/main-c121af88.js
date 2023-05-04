@@ -11708,13 +11708,13 @@ const enrutador = {
     home: __vitePreload(() => import("./homeVista-737ca195.js"), true ? [] : void 0, import.meta.url),
     // Usuarios
     adminUsuarios: __vitePreload(() => import("./adminVista-2c9f5837.js"), true ? [] : void 0, import.meta.url),
-    registro: __vitePreload(() => import("./registroVista-22c059e3.js"), true ? [] : void 0, import.meta.url),
-    login: __vitePreload(() => import("./loginVista-ce5ddaf5.js"), true ? [] : void 0, import.meta.url),
+    registro: __vitePreload(() => import("./registroVista-be66c460.js"), true ? [] : void 0, import.meta.url),
+    login: __vitePreload(() => import("./loginVista-8821dc1f.js"), true ? [] : void 0, import.meta.url),
     // Proyectos
-    proyectos: __vitePreload(() => import("./proyectosVistas-67ebc17b.js"), true ? ["./proyectosVistas-67ebc17b.js","./proyecto-5e8aafd6.js"] : void 0, import.meta.url),
-    nuevoProyecto: __vitePreload(() => import("./nuevoProyectoVista-6e9f5bd4.js"), true ? ["./nuevoProyectoVista-6e9f5bd4.js","./proyecto-5e8aafd6.js"] : void 0, import.meta.url),
-    editarProyecto: __vitePreload(() => import("./editarProyectoVista-12ef7951.js"), true ? ["./editarProyectoVista-12ef7951.js","./proyecto-5e8aafd6.js"] : void 0, import.meta.url),
-    detalleProyecto: __vitePreload(() => import("./detalleProyectoVista-a15176ee.js"), true ? ["./detalleProyectoVista-a15176ee.js","./proyecto-5e8aafd6.js"] : void 0, import.meta.url)
+    proyectos: __vitePreload(() => import("./proyectosVistas-1e674303.js"), true ? ["./proyectosVistas-1e674303.js","./proyecto-52467481.js"] : void 0, import.meta.url),
+    nuevoProyecto: __vitePreload(() => import("./nuevoProyectoVista-937cd67d.js"), true ? ["./nuevoProyectoVista-937cd67d.js","./proyecto-52467481.js"] : void 0, import.meta.url),
+    editarProyecto: __vitePreload(() => import("./editarProyectoVista-f2cc2c4c.js"), true ? ["./editarProyectoVista-f2cc2c4c.js","./proyecto-52467481.js"] : void 0, import.meta.url),
+    detalleProyecto: __vitePreload(() => import("./detalleProyectoVista-c08dc35d.js"), true ? ["./detalleProyectoVista-c08dc35d.js","./proyecto-52467481.js"] : void 0, import.meta.url)
     // misProyectos: import('../vistas/proyectos/misProyectosVista.js'),
     // // Enunciados
     // enunciados: import('../vistas/enunciados/enunciadosVista.js'),
