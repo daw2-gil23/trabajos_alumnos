@@ -95,14 +95,13 @@ export default {
     let divComentarios = '<div id="divComentario" class="comentario d-flex flex-wrap align-item-top bg-dark">'
 
     for (const comentario of comentarios) {
-      const autor = await Perfil.getById(comentario.id)
-      console.log(comentario)
+      console.log(comentario.user_id)
+      const autor = await Perfil.getByUserId(comentario.user_id)
+      console.log(autor)
       divComentarios += `
       <div class="w-100 d-flex mb-2 p-3 bg-dark">
         <div class="w-100">          
-          <div class="comentario text-white"><h3>${comentario.comentario}</h3></div>
-
-          <p class="text-end small text-white "><h5>${autor.nombre}</h5></p>
+          <div class="comentario text-white"><h3>${autor.nombre} - ${comentario.comentario} </h3></div>
         </div>
       </div>
         `
@@ -122,12 +121,18 @@ export default {
       //   console.log('Adios')
       // }
 
-      const comentario = {
-        comentario: document.querySelector('#nuevoComentario').value,
-        proyecto_id: proyecto.id
-      }
+      const usuarioLogueado = await User.getUser()
 
-      Comentario.create(comentario)
+      if (usuarioLogueado) {
+        const comentario = {
+          comentario: document.querySelector('#nuevoComentario').value,
+          proyecto_id: proyecto.id,
+          user_id: usuarioLogueado.id
+        }
+        Comentario.create(comentario)
+      } else {
+        alert('Inicia sesion para comentar')
+      }
 
       // Comentario.create
     })

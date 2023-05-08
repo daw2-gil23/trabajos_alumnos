@@ -56,7 +56,6 @@ export const formEditarPerfil = {
   </div>
     `,
   script: async () => {
-    cl
     // Código de validación
     // Seleccionamos el formulario de editar usuario
     const formulario = document.querySelector('#formEditarUsuario')
