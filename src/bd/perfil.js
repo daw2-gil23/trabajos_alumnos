@@ -49,6 +49,7 @@ export class Perfil {
       .eq('user_id', id)
       .single()
     if (error) {
+      console.log(error.message)
       throw new Error(error.message)
     }
     // Devuelve un nuevo objeto con los datos del registro

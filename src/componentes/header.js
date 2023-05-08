@@ -45,6 +45,7 @@ export const header = {
 ${formEditarPerfil.template}
   `,
   script: async () => {
+    formEditarPerfil.script()
     try {
       // Capturamos los datos del usuario logueado
       const usuarioLogueado = await User.getUser()

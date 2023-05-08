@@ -44,6 +44,7 @@ export const enrutador = {
       try {
         // Obtenemos el objeto del componente (que fué exportado como default)
         const vista = await componenteVista.default
+
         // inyectamos vista y ejecutamos su script
         document.querySelector('main').innerHTML = vista.template
         // A los script les pasamos el parametro que hemos extraido de la ruta. Así podemos pasar, por ejemplo, el id de un proyecto
