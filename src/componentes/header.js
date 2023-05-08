@@ -6,43 +6,44 @@ import { menuUsuario } from './menuUsuario'
 
 export const header = {
   template: `
-  <!-- Navbar  -->
-  <nav class="navbar navbar-expand-sm bg-light fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="#/home">
-        <img
-          src="/assets/logo_vanilla.svg"
-          alt="Logo"
-          width="30"
-          height="30"
-          class="d-inline-block align-text-top me-2"
-        />
-        <span class=""></span>
-        Vanilla Games
-      </a>
-      
-      <button
-        class="navbar-toggler ms-auto
-        "
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Menú superior -->
-      ${menuSuperior.template}
-      <!-- Menu usuario -->
-      ${menuUsuario.template}
-    </div>
-  </nav>
   
-  //Modals
-  ${formEditarPerfil.template}
-    `,
+<!-- Navbar  -->
+<nav class="navbar navbar-expand-sm bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#/home">
+      <img
+        src="/assets/logo_vanilla.svg"
+        alt="Logo"
+        width="30"
+        height="30"
+        class="d-inline-block align-text-top me-2"
+      />
+      <span class=""></span>
+      Vanilla Games
+    </a>
+    
+    <button
+      class="navbar-toggler ms-auto
+      "
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Menú superior -->
+    ${menuSuperior.template}
+    <!-- Menu usuario -->
+    ${menuUsuario.template}
+  </div>
+</nav>
+
+//Modals
+${formEditarPerfil.template}
+  `,
   script: async () => {
     try {
       // Capturamos los datos del usuario logueado
@@ -52,18 +53,10 @@ export const header = {
         // cargamos el menú superior y usuario para su rol
         menuSuperior.script(perfilLogueado)
         menuUsuario.script(perfilLogueado)
-
-        // Ejecutamos la lógica del componente formEditarPerifio
-        formEditarPerfil.script(perfilLogueado)
       } else {
         menuSuperior.script('anonimo')
         menuUsuario.script('anonimo')
       }
-
-      document.querySelector('#editarPerfil').addEventListener('click', (e) => {
-        e.preventDefault()
-        formEditarPerfil.script()
-      })
     } catch (error) {
       // alert('No he podido cargar el usuario logueado')
     }

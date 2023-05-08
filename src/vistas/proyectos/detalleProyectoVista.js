@@ -52,7 +52,7 @@ export default {
       <h3>Comentarios:</h3>
       
       <form id="formComentario">
-        <div class="comentario d-flex flex-wrap align-item-top bg-dark p-3 mb-5">
+        <div class="comentario d-flex flex-wrap align-item-top bg-dark p-3">
           
             <div class="w-100 d-flex">
               <img id="imgPerfilLogueado" src="/assets/avatar.svg" alt="us" class="border me-3 mt-1" style="width:50px;height:50px;">
@@ -92,17 +92,23 @@ export default {
 
     const comentarios = await Comentario.getAllByProjectId(proyecto.id)
 
-    let divComentarios = ''
+    let divComentarios = '<div id="divComentario" class="comentario d-flex flex-wrap align-item-top bg-dark">'
 
     for (const comentario of comentarios) {
+      const autor = await Perfil.getById(comentario.id)
+      console.log(comentario)
       divComentarios += `
-      <div class="w-100 d-flex mb-2 p-3">
+      <div class="w-100 d-flex mb-2 p-3 bg-dark">
         <div class="w-100">          
-          <div class="comentario"><h3>${comentario.comentario}</h3></div>
+          <div class="comentario text-white"><h3>${comentario.comentario}</h3></div>
+
+          <p class="text-end small text-white "><h5>${autor.nombre}</h5></p>
         </div>
       </div>
         `
     }
+
+    divComentarios += '</div>'
 
     const opiniones = document.querySelector('#comentarios')
     opiniones.innerHTML = divComentarios
