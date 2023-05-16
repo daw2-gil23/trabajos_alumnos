@@ -1,5 +1,5 @@
-import { P as Proyecto } from './proyecto-76de328c.js'
-import './main-1ff357e0.js'
+import { P as Proyecto } from './proyecto-6d4d2673.js'
+import './main-193633d7.js'
 const proyectosVistas = {
   template: `
     <main style="padding-top: 100px">

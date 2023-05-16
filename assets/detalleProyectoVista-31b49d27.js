@@ -1,5 +1,5 @@
-import { s as supabase, P as Perfil, U as User } from './main-1ff357e0.js'
-import { P as Proyecto } from './proyecto-76de328c.js'
+import { s as supabase, P as Perfil, U as User } from './main-193633d7.js'
+import { P as Proyecto } from './proyecto-6d4d2673.js'
 class Comentario {
   // Mapping de propiedades de la tabla perfiles
   constructor (id = null, created_at = null, comentario = null, proyecto_id = null, user_id = null) {

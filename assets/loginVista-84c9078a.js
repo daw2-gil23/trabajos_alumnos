@@ -1,4 +1,4 @@
-import { U as User } from "./main-1ff357e0.js";
+import { U as User } from "./main-193633d7.js";
 const loginVista = {
   template: `
   <div

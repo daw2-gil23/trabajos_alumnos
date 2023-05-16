@@ -12092,7 +12092,7 @@ const menuUsuario = {
         e.preventDefault()
         await User.logout()
         header.script()
-        window.location.href = '/trabajos_alumno/#/home'
+        window.location.href = '/trabajos_alumnos/#/home'
       })
     } else {
       const imgAvatar = './imagenes/avatar.svg'
@@ -12169,13 +12169,13 @@ const enrutador = {
     home: __vitePreload(() => import('./homeVista-b4349d90.js'), true ? [] : void 0, import.meta.url),
     // Usuarios
     adminUsuarios: __vitePreload(() => import('./adminVista-2c9f5837.js'), true ? [] : void 0, import.meta.url),
-    registro: __vitePreload(() => import('./registroVista-be5ccb13.js'), true ? [] : void 0, import.meta.url),
-    login: __vitePreload(() => import('./loginVista-56a79a51.js'), true ? [] : void 0, import.meta.url),
+    registro: __vitePreload(() => import('./registroVista-34b20bf5.js'), true ? [] : void 0, import.meta.url),
+    login: __vitePreload(() => import('./loginVista-84c9078a.js'), true ? [] : void 0, import.meta.url),
     // Proyectos
-    proyectos: __vitePreload(() => import('./proyectosVistas-be9f357a.js'), true ? ['./proyectosVistas-be9f357a.js', './proyecto-76de328c.js'] : void 0, import.meta.url),
-    nuevoProyecto: __vitePreload(() => import('./nuevoProyectoVista-3fd019f9.js'), true ? ['./nuevoProyectoVista-3fd019f9.js', './proyecto-76de328c.js'] : void 0, import.meta.url),
-    editarProyecto: __vitePreload(() => import('./editarProyectoVista-71bdd730.js'), true ? ['./editarProyectoVista-71bdd730.js', './proyecto-76de328c.js'] : void 0, import.meta.url),
-    detalleProyecto: __vitePreload(() => import('./detalleProyectoVista-8530df6d.js'), true ? ['./detalleProyectoVista-8530df6d.js', './proyecto-76de328c.js'] : void 0, import.meta.url)
+    proyectos: __vitePreload(() => import('./proyectosVistas-2f932060.js'), true ? ['./proyectosVistas-2f932060.js', './proyecto-6d4d2673.js'] : void 0, import.meta.url),
+    nuevoProyecto: __vitePreload(() => import('./nuevoProyectoVista-b1d4b7a5.js'), true ? ['./nuevoProyectoVista-b1d4b7a5.js', './proyecto-6d4d2673.js'] : void 0, import.meta.url),
+    editarProyecto: __vitePreload(() => import('./editarProyectoVista-4b384c2c.js'), true ? ['./editarProyectoVista-4b384c2c.js', './proyecto-6d4d2673.js'] : void 0, import.meta.url),
+    detalleProyecto: __vitePreload(() => import('./detalleProyectoVista-31b49d27.js'), true ? ['./detalleProyectoVista-31b49d27.js', './proyecto-6d4d2673.js'] : void 0, import.meta.url)
     // misProyectos: import('../vistas/proyectos/misProyectosVista.js'),
     // // Enunciados
     // enunciados: import('../vistas/enunciados/enunciadosVista.js'),
@@ -12226,7 +12226,7 @@ document.querySelector('#header').innerHTML = header.template
 header.script()
 document.querySelector('#footer').innerHTML = footer.template
 enrutador.observadorRutas()
-window.location = '#/home'
+window.location = '/trabajos_alumnos/#/home'
 export {
   Perfil as P,
   User as U,
