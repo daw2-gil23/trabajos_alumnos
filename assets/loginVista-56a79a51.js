@@ -1,4 +1,4 @@
-import { U as User } from "./main-c121af88.js";
+import { U as User } from "./main-1ff357e0.js";
 const loginVista = {
   template: `
   <div
@@ -56,7 +56,7 @@ const loginVista = {
           const usuarioLogeado = await User.login(userData);
           const divUsuarioLogeado = document.querySelectorAll("#emailUsuarioLogueado");
           divUsuarioLogeado[0].innerHTML = usuarioLogeado.email;
-          window.location.href = "/#/home";
+          window.location.href = "/trabajos_alumno/#/home";
         } catch (error) {
           alert("No se ha podido iniciar sesión " + error);
         }

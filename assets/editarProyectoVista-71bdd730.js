@@ -1,5 +1,5 @@
-import { P as Proyecto } from "./proyecto-52467481.js";
-import "./main-c121af88.js";
+import { P as Proyecto } from "./proyecto-76de328c.js";
+import "./main-1ff357e0.js";
 const editarProyectoVista = {
   template: `
     <div
@@ -86,7 +86,7 @@ const editarProyectoVista = {
       proyecto.descripcion = descripcionProyecto.value;
       proyecto.value = enlaceProyecto.value;
       proyecto.update();
-      window.location.href = "/#/proyectos";
+      window.location.href = "/trabajos_alumno/#/proyectos";
     });
   }
 };

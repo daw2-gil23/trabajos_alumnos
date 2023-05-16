@@ -1,5 +1,5 @@
-import { P as Proyecto } from "./proyecto-52467481.js";
-import "./main-c121af88.js";
+import { P as Proyecto } from './proyecto-76de328c.js'
+import './main-1ff357e0.js'
 const proyectosVistas = {
   template: `
     <main style="padding-top: 100px">
@@ -30,15 +30,15 @@ const proyectosVistas = {
   `,
   script: async () => {
     try {
-      const proyectos = await Proyecto.getAll();
-      console.log("numero de proyectos en la base de datos: ", proyectos.length);
-      let tabla = "";
+      const proyectos = await Proyecto.getAll()
+      console.log('numero de proyectos en la base de datos: ', proyectos.length)
+      let tabla = ''
       for (const proyecto of proyectos) {
-        const nombreAutor = await Proyecto.buscarAutor(proyecto.user_id);
+        const nombreAutor = await Proyecto.buscarAutor(proyecto.user_id)
         tabla += `
       <tr>
         <td>
-          <img src="/assets/imagenes/proyectos/proyecto.png" width="100" alt="" data-id="${proyecto.id}" class="detalle"/>
+          <img src="./imagenes/proyectos/proyecto.png" width="100" alt="" data-id="${proyecto.id}" class="detalle"/>
         </td>
         <td>${nombreAutor[0].nombre_usuario}</td>
         <td>${proyecto.nombre}</td>
@@ -50,14 +50,14 @@ const proyectosVistas = {
             type="button"
             class="btn bg-danger detalle"
           >
-          <img  data-id="${proyecto.id}" class="detalle w-100" src="/assets/iconos/icons8-acerca-de.svg" width="20" alt="" />
+          <img  data-id="${proyecto.id}" class="detalle w-100" src="./imagenes/iconos/icons8-acerca-de.svg" width="20" alt="" />
           </button>
           <button
             data-id="${proyecto.id}"
             type="button"
             class="btn bg-info editar mt-1"
           >
-            <img src="/assets/iconos/icons8-editar.svg" width="20" alt="" class="editar" data-id="${proyecto.id}"/>
+            <img src="./imagenes/iconos/icons8-editar.svg" width="20" alt="" class="editar" data-id="${proyecto.id}"/>
           </button>
 
           <button
@@ -65,44 +65,43 @@ const proyectosVistas = {
               type="button"
               class="btn bg-danger borrar mt-1"
           >
-            <img  data-id="${proyecto.id}" class="borrar w-100" src="/assets/iconos/icons8-basura-llena.svg" width="20" alt="" />
+            <img  data-id="${proyecto.id}" class="borrar w-100" src="./imagenes/iconos/icons8-basura-llena.svg" width="20" alt="" />
           </button>
         </td>
       </tr>
-      `;
+      `
       }
-      const tablaProyectosBody = document.querySelector("#tablaProyectos tbody");
-      if (tablaProyectosBody)
-        tablaProyectosBody.innerHTML = tabla;
-      const tablaProyectos = document.querySelector("#tablaProyectos");
+      const tablaProyectosBody = document.querySelector('#tablaProyectos tbody')
+      if (tablaProyectosBody) { tablaProyectosBody.innerHTML = tabla }
+      const tablaProyectos = document.querySelector('#tablaProyectos')
       if (tablaProyectos) {
-        tablaProyectos.addEventListener("click", async (e) => {
-          const id = e.target.dataset.id;
-          if (e.target.classList.contains("borrar")) {
+        tablaProyectos.addEventListener('click', async (e) => {
+          const id = e.target.dataset.id
+          if (e.target.classList.contains('borrar')) {
             try {
-              const proyectoABorrar = await Proyecto.getById(id);
-              const seguro = confirm("¿Está seguro que desea borrar el proyecto? Se eliminarán todos sus comentarios y notas " + proyectoABorrar.nombre + ", " + proyectoABorrar.nombre);
+              const proyectoABorrar = await Proyecto.getById(id)
+              const seguro = confirm('¿Está seguro que desea borrar el proyecto? Se eliminarán todos sus comentarios y notas ' + proyectoABorrar.nombre + ', ' + proyectoABorrar.nombre)
               if (seguro) {
-                await Proyecto.delete(id);
+                await Proyecto.delete(id)
               }
-              window.location.href = "/#/proyectos";
+              window.location.href = '/trabajos_alumno/#/proyectos'
             } catch (error) {
-              alert("No se han podido borrar el proyecto" + error);
+              alert('No se han podido borrar el proyecto' + error)
             }
           }
-          if (e.target.classList.contains("editar")) {
-            window.location.href = "/#/editarProyecto/" + id;
+          if (e.target.classList.contains('editar')) {
+            window.location.href = '/trabajos_alumno/#/editarProyecto/' + id
           }
-          if (e.target.classList.contains("detalle")) {
-            window.location.href = "/#/detalleProyecto/" + id;
+          if (e.target.classList.contains('detalle')) {
+            window.location.href = '/trabajos_alumno/#/detalleProyecto/' + id
           }
-        });
+        })
       }
     } catch (error) {
-      alert("No se han podido cargar la tabla de usuarios " + error);
+      alert('No se han podido cargar la tabla de usuarios ' + error)
     }
   }
-};
+}
 export {
   proyectosVistas as default
-};
+}
