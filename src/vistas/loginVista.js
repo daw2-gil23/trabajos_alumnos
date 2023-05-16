@@ -69,7 +69,7 @@ export default {
           // document.querySelector('.liLogin').classList.add('d-none')
 
           // Cagamos la página home
-          window.location.href = '/#/home'
+          window.location.href = '/trabajos_alumno/#/home'
         } catch (error) {
           alert('No se ha podido iniciar sesión ' + error)
         }

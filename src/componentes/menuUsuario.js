@@ -14,7 +14,7 @@ export const menuUsuario = {
           <span id="emailUsuarioLogueado" class="pe-3 text-dark"></span>
             <img
               id="imgAvatar"
-              src="/assets/avatar.svg"
+              src="/imagenes/avatar.svg"
               alt="Logo"
               width="30"
               height="30"
@@ -172,10 +172,10 @@ export const menuUsuario = {
         await User.logout()
         header.script()
         // Cargamos la página home
-        window.location.href = '/#/home'
+        window.location.href = '/trabajos_alumno/#/home'
       })
     } else {
-      const imgAvatar = '/assets/avatar.svg'
+      const imgAvatar = '/imagenes/avatar.svg'
       // Insertamos la foto del avatar
       document.querySelector('#imgAvatar').src = imgAvatar
       // Insertamos el email del usuario

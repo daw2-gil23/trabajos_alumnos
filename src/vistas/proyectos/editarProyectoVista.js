@@ -92,7 +92,7 @@ export default {
 
       proyecto.update()
 
-      window.location.href = '/#/proyectos'
+      window.location.href = '/trabajos_alumno/#/proyectos'
     })
   }
 }
