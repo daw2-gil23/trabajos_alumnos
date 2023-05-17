@@ -84,7 +84,7 @@ const registroVista = {
         };
         await Perfil.create(perfilData);
         alert("Usuario creado con éxito");
-        window.location.href = "/trabajos_alumno/#/login";
+        window.location.href = "/trabajos_alumnos/#/login";
       } catch (error) {
         console.log(error);
         alert("Error al crear usuario");
