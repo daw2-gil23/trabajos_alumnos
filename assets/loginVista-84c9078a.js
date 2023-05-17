@@ -56,7 +56,7 @@ const loginVista = {
           const usuarioLogeado = await User.login(userData);
           const divUsuarioLogeado = document.querySelectorAll("#emailUsuarioLogueado");
           divUsuarioLogeado[0].innerHTML = usuarioLogeado.email;
-          window.location.href = "/trabajos_alumno/#/home";
+          window.location.href = "/trabajos_alumnos/#/home";
         } catch (error) {
           alert("No se ha podido iniciar sesión " + error);
         }
