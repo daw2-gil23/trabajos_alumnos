@@ -84,7 +84,7 @@ const proyectosVistas = {
               if (seguro) {
                 await Proyecto.delete(id)
               }
-              window.location.href = '/trabajos_alumno/#/proyectos'
+              window.location.href = '/trabajos_alumnos/#/proyectos'
             } catch (error) {
               alert('No se han podido borrar el proyecto' + error)
             }
