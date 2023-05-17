@@ -86,7 +86,7 @@ const editarProyectoVista = {
       proyecto.descripcion = descripcionProyecto.value;
       proyecto.value = enlaceProyecto.value;
       proyecto.update();
-      window.location.href = "/trabajos_alumno/#/proyectos";
+      window.location.href = "/trabajos_alumnos/#/proyectos";
     });
   }
 };
