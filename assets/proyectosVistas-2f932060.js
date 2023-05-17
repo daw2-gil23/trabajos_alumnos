@@ -90,10 +90,10 @@ const proyectosVistas = {
             }
           }
           if (e.target.classList.contains('editar')) {
-            window.location.href = '/trabajos_alumno/#/editarProyecto/' + id
+            window.location.href = '/trabajos_alumnos/#/editarProyecto/' + id
           }
           if (e.target.classList.contains('detalle')) {
-            window.location.href = '/trabajos_alumno/#/detalleProyecto/' + id
+            window.location.href = '/trabajos_alumnos/#/detalleProyecto/' + id
           }
         })
       }
